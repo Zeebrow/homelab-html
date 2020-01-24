@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Deployment Home</h1>
+<script>
+function setProgressBar(prog) {
+    if (str.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+var progVal=0;
+function increaseProg() {
+	var xhttp = new XMLHttpRequest();
+	var prog = document.getElementById("progressBar").getAttribute("value");
+	//progVal = parseInt(prog);
+	
+	progVal = progVal + 5;
+
+	console.log("Progress has been made! Value:\t\t" + progVal +"/100");
+	document.getElementById("progressBar").setAttribute("value", progVal);
+
+}
+function reset() {
+	progVal=0;
+	document.getElementById("progressBar").setAttribute("value", progVal);
+	console.log("Reset value.");
+}
+</script>
+<?php
+$progress = 5;
+echo "Hello World!";
+?> 
+
+<div id="demo">
+  <h2>Push button to update progress bar.</h2>
+  <button type="button" onclick="increaseProg()">Change Content</button>
+  <br>
+  <button type="button" onclick="reset()">Reset</button>
+</div>
+<br>
+Progress:
+<br>
+<progress id=progressBar value="0" max="100"></progress>
+<br>
+<br>
+ <iframe src="form.html"></iframe>
+<br>
+<?php include 'footer.php';?>
+
+
+
+
+</body>
+</html>

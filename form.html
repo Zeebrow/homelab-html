@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/form.css">
+<meta charset="utf-8"/>
+<style>
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
+</head>
+<body onload="pageRefresh()">
+	<p class="center"> To begin deployment, please fill out this form. <p/>
+	<!--<form action="Submitted.php">-->
+	<form id="deploymentform" action="/Submitted.php" method="post">
+		<fieldset>
+		<legend> Required Info </legend>
+		First Name:<br>
+		<input type="text" name="firstname" id="firstname" value="Mike">
+		<br>
+		<br>
+		Last Name:<br>
+		<input type="text" name="lastname" id="lastname" value="Zborowski">
+		<br>
+		<br>
+		Carelogistics Email:<br>
+		<input type="text" name="email" id="email" value="mzborowski@carelogistics.com" size="30">
+		<br>
+		<br>
+		</fieldset>
+
+		<fieldset>
+		<legend>Software versioning </legend>
+		<br>
+		<input type="checkbox" form="Software versioning" name="CompatibleVersionsOnly" id="CompatibleVersionsOnly" onclick="toggleCompatSel()"> Only show compatible releases with:
+		<br>
+		<select name="CompatabilitySelection">
+			<option value="core">HOS Core (plym)</option>
+			<option value="hosweb">HOS Web (pl-web)</option>
+			<option value="db">HOS Database (database)</option>
+			<option value="cap3">Care Advance (p3)</option>
+			<option value="caui">Care Advance  UI (ui)</option>
+			<option value="visb">Visibility Board (vb)</option>
+			<option value="iris">IRIS (comm)</option>
+		</select> <code>//Why doesn't this disable properly when toggled?</code>
+		<br><br>
+		<select id="HOSCodebase" name="Codebase">
+			<option value="develop">develop</option>
+			<option value="release">release</option>
+			<option value="feature">feature</option>
+			<option value="other">other</option>
+		</select> 
+		<br>
+		<br>
+		HOS Version:<br>
+		<input type="text" name="HOSVersion" id="HOSVersion" value="develop">
+		<br>
+		<br>
+		CA Version:<br>
+		<input type="text" name="CAVersion" id="CAVersion" value="develop">
+		<br>
+		<br>
+		Codebase:<br>
+
+		</fieldset>
+
+		<fieldset>
+		<legend> Optional Info </legend>
+		Environment CIDR:<br>
+		<input type="text" name="VpcCidr" id="VpcCidr" value="10.2.0.0/0">
+		<br>
+		<input type="submit" value="Deploy" onClick="attemptFormDataUpload()" >
+		</fieldset>
+
+	</form>
+		<br>
+		<button onClick="attemptFormDataUpload()">HitMe</button>
+		<br>
+
+<script src="/js/form.js">
+</script>
+</body>
+
+</html>
