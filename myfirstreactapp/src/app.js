@@ -14,6 +14,7 @@ class App extends React.Component {
             b2LastClicked: '',
             server: '192.168.1.76'
         };
+        console.log(this.state);
     }
     b1GetReturnedCount = (b1ReturnedCount) => {
         this.setState({b1ClickedCount: b1ReturnedCount});

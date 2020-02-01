@@ -4,7 +4,7 @@ class SendFeedback extends React.Component {
     constructor(props){
         super(props);
 		this.state = {
-            server: '192.168.1.76',
+            server: '192.168.1.76'
         };
         this.sendFeedback = this.sendFeedback.bind(this);
     }
