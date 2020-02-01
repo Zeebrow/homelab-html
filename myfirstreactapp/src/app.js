@@ -24,17 +24,17 @@ class App extends React.Component {
     }
     b1GetReturnedCount = (b1ReturnedCount, b1LastClicked) => {
         this.setState({b1ClickedCount: b1ReturnedCount});
-        this.setState({b1LastClicked: b1LastClicked - this.state.b1LastClicked});
+        this.setState({b1LastClicked: pageOpened - this.state.b1LastClicked});
     }
     b2GetReturnedCount = (b2ReturnedCount, b2LastClicked) => {
         this.setState({b2ClickedCount: b2ReturnedCount});
-        this.setState({b2LastClicked: this.state.b2LastClicked - b2LastClicked});
+        this.setState({b2LastClicked: this.state.b2LastClicked - pageOpened});
     }
     getReturnedCount = (ReturnedCount, ReturnedTime) => {
         this.setState({
             b3:{
                 ClickedCount: ReturnedCount,
-                LastClicked: ReturnedTime - this.state.b3.LastClicked
+                LastClicked: ReturnedTime - pageOpened
             }
         });
     }
