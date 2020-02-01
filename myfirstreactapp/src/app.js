@@ -4,10 +4,11 @@ import MyList from './components/mylist.js';
 import MyButton from './components/mybutton/mybutton.js';
 import SendFeedback from './components/sendfeedback/sendfeedback.js';
 
+const pageOpened = Date.now();
+
 class App extends React.Component {
     constructor() {
         super();
-        const pageOpened = Date.now();
         this.state = {
             b3: {
                 ClickedCount: 0,
@@ -27,7 +28,7 @@ class App extends React.Component {
     }
     b2GetReturnedCount = (b2ReturnedCount, b2LastClicked) => {
         this.setState({b2ClickedCount: b2ReturnedCount});
-        this.setState({b2LastClicked: 'today, lol!!1'});
+        this.setState({b2LastClicked: b2LastClicked});
     }
     getReturnedCount = (ReturnedCount, ReturnedTime) => {
         this.setState({
@@ -44,15 +45,15 @@ class App extends React.Component {
                 <h1>Yo.</h1>
                 <br/>
                 <div>B1 Count: {this.state.b1ClickedCount}</div>
-                <div>B1 Time: {this.state.b1LastClicked}</div>
+                <div>B1 Time: pageOpened - {this.state.b1LastClicked}</div>
                 <MyButton getReturnedCount={this.b1GetReturnedCount} name="b1"/>
                 <br/>
                 <div>B2 Count: {this.state.b2ClickedCount}</div>
-                <div>B2 Time: {this.state.b2LastClicked}</div>
+                <div>B2 Time: pageOpened - {this.state.b2LastClicked}</div>
                 <MyButton getReturnedCount={this.b2GetReturnedCount} name="b2"/>
                 <br/>
                 <div>B3 Count: {this.state.b3.ClickedCount}</div>
-                <div>B3 Time: {this.state.b3.LastClicked}</div>
+                <div>B3 Time: pageOpened - {this.state.b3.LastClicked}</div>
                 <MyButton getReturnedCount={this.getReturnedCount} name="b3"/>
                 <br/>
                 <SendFeedback data={this.state} name="sender"/>
