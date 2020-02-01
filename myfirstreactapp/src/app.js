@@ -22,7 +22,7 @@ class App extends React.Component {
                 <h1>Yo.</h1>
                 <br/>
                 <div>Count: {this.state.b1ClickedCount}</div>
-                <MyButton getReturnedCount={this.b1GetReturnedCount}, name="b1"/>
+                <MyButton getReturnedCount={this.b1GetReturnedCount} name="b1"/>
                 <br/>
                 <SendFeedback />
             </div>
