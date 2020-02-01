@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import MyList from './components/mylist.js';
 import MyButton from './components/mybutton/mybutton.js';
 import SendFeedback from './components/sendfeedback/sendfeedback.js';
+
 let leButton = new MyButton;
 console.log(leButton);
+
 class App extends React.Component {
     constructor() {
         super();

@@ -4,8 +4,8 @@ class SendFeedback extends React.Component {
     constructor(props){
         super(props);
 		this.state = {
-            server: '',
-            data: ''
+            server: '192.168.1.76',
+            data: 'test-data'
         };
 
         this.sendFeedback = this.sendFeedback.bind(this);
@@ -15,6 +15,7 @@ class SendFeedback extends React.Component {
 		this.setState({ server: '192.168.1.76' });
 		console.log('Sending data to ' + this.state.server);
         alert('Sending data to ' + this.state.server);
+        //send data, promise
 	}
 	render() {
 		return(
