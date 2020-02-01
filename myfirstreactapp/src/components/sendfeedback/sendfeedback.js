@@ -11,7 +11,15 @@ class SendFeedback extends React.Component {
         this.sendFeedback = this.sendFeedback.bind(this);
     }
 
+    receiveData() {
+        consolelog("Inside receiveData(). Data: " + this.props.data;
+        this.setState({data: this.props.data});
+    }
+
 	sendFeedback = () => {
+        consolelog("Inside sendFeedback(). Data: " + this.props.data;
+        this.setState({data: this.props.data});
+        
 		this.setState({ server: '192.168.1.76' });
         alert('Sending data to ' + this.state.server);
 

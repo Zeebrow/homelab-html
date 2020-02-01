@@ -24,10 +24,6 @@ class App extends React.Component {
         this.setState({b2LastClicked: 'today, lol!!1'});
     }
 
-    packData = () => {
-        console.log("App.js packing data: "+this.state);
-    }
-
     render() {
         return(
             <div>
@@ -37,7 +33,7 @@ class App extends React.Component {
                 <MyButton getReturnedCount={this.b1GetReturnedCount} name="b1"/>
                 <MyButton getReturnedCount={this.b2GetReturnedCount} name="b2"/>
                 <br/>
-                <SendFeedback data={this.packData} name="sender"/>
+                <SendFeedback data={this.state} name="sender"/>
             </div>
         );
 
