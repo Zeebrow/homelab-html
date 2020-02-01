@@ -5,7 +5,7 @@ import MyButton from './components/mybutton/mybutton.js';
 
 class App extends React.Component {
     state = { value: 0 };
-    leButton = new MyButton;
+    let leButton = new MyButton;
     console.log(leButton);
     render() {
         return(
