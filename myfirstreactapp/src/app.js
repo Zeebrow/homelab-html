@@ -15,6 +15,7 @@ class App extends React.Component {
             <div>
                 <h1>Yo.</h1>
                 <MyButton />
+                <MyButton />
             </div>
         );
 
