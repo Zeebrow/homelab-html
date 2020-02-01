@@ -7,22 +7,35 @@ import SendFeedback from './components/sendfeedback/sendfeedback.js';
 class App extends React.Component {
     constructor() {
         super();
+        const pageOpened = Date.now();
         this.state = {
+            b3: {
+                ClickedCount: 0,
+                LastClicked: ''
+            },
             b1ClickedCount: 0,
             b1LastClicked: '',
             b2ClickedCount: 0,
             b2LastClicked: '',
-            server: '192.168.1.76'
+            server: '192.168.1.76',
         };
         console.log(this.state);
     }
-    b1GetReturnedCount = (b1ReturnedCount) => {
+    b1GetReturnedCount = (b1ReturnedCount, b1LastClicked) => {
         this.setState({b1ClickedCount: b1ReturnedCount});
-        this.setState({b1LastClicked: 'today, lol!!1'});
+        this.setState({b1LastClicked: b1LastClicked});
     }
-    b2GetReturnedCount = (b2ReturnedCount) => {
+    b2GetReturnedCount = (b2ReturnedCount, b2LastClicked) => {
         this.setState({b2ClickedCount: b2ReturnedCount});
         this.setState({b2LastClicked: 'today, lol!!1'});
+    }
+    getReturnedCount = (ReturnedCount) => {
+        this.setState({
+            b3:{
+                ClickedCount: ReturnedCount,
+                LastClicked: ReturnedTime
+            }
+        });
     }
 
     render() {
@@ -30,9 +43,15 @@ class App extends React.Component {
             <div>
                 <h1>Yo.</h1>
                 <br/>
-                <div>Count: {this.state.b1ClickedCount}</div>
+                <div>B1 Count: {this.state.b1ClickedCount}</div>
+                <div>B1 Time: {this.state.b1LastClicked}</div>
                 <MyButton getReturnedCount={this.b1GetReturnedCount} name="b1"/>
+                <div>B2 Count: {this.state.b2ClickedCount}</div>
+                <div>B2 Time: {this.state.b2LastClicked}</div>
                 <MyButton getReturnedCount={this.b2GetReturnedCount} name="b2"/>
+                <div>B3 Count: {this.state.b3.ClickedCount}</div>
+                <div>B3 Time: {this.state.b3.LastClicked}</div>
+                <MyButton getReturnedCount={this.getReturnedCount} name="b3"/>
                 <br/>
                 <SendFeedback data={this.state} name="sender"/>
             </div>
