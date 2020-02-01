@@ -25,20 +25,25 @@ class App extends React.Component {
     b1GetReturnedCount = (b1ReturnedCount, b1LastClicked) => {
         console.log("Time then: " + pageOpened);
         console.log("Time now: " + Date.now());
+        var b1clickedAt = Date.now() - pageOpened;
         this.setState({b1ClickedCount: b1ReturnedCount});
-        this.setState({b1LastClicked: pageOpened - this.state.b1LastClicked});
+        this.setState({b1LastClicked: b1clickedAt});
     }
     b2GetReturnedCount = (b2ReturnedCount, b2LastClicked) => {
+        console.log("Time then: " + pageOpened);
+        console.log("Time now: " + Date.now());
+        var b2clickedAt = Date.now() - pageOpened;
         this.setState({b2ClickedCount: b2ReturnedCount});
-        this.setState({b2LastClicked: this.state.b2LastClicked - pageOpened});
+        this.setState({b2LastClicked: b2clickedAt});
     }
     getReturnedCount = (ReturnedCount, ReturnedTime) => {
         console.log("Time then: " + pageOpened);
         console.log("Time now: " + Date.now());
+        var b3clickedAt = Date.now() - pageOpened;
         this.setState({
             b3:{
                 ClickedCount: ReturnedCount,
-                LastClicked: ReturnedTime - pageOpened
+                LastClicked: b3clickedAt
             }
         });
     }
