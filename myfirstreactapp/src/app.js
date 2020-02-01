@@ -5,7 +5,7 @@ import MyButton from './components/mybutton/mybutton.js';
 import SendFeedback from './components/sendfeedback/sendfeedback.js';
 
 const pageOpened = Date.now();
-
+console.log(pageOpened);
 class App extends React.Component {
     constructor() {
         super();
@@ -23,6 +23,8 @@ class App extends React.Component {
         console.log(this.state);
     }
     b1GetReturnedCount = (b1ReturnedCount, b1LastClicked) => {
+        console.log("Time then: " + pageOpened);
+        console.log("Time now: " + Date.now());
         this.setState({b1ClickedCount: b1ReturnedCount});
         this.setState({b1LastClicked: pageOpened - this.state.b1LastClicked});
     }
@@ -31,6 +33,8 @@ class App extends React.Component {
         this.setState({b2LastClicked: this.state.b2LastClicked - pageOpened});
     }
     getReturnedCount = (ReturnedCount, ReturnedTime) => {
+        console.log("Time then: " + pageOpened);
+        console.log("Time now: " + Date.now());
         this.setState({
             b3:{
                 ClickedCount: ReturnedCount,
