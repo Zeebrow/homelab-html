@@ -34,7 +34,7 @@ class App extends React.Component {
         this.setState({
             b3:{
                 ClickedCount: ReturnedCount,
-                LastClicked: this.state.b3.LastClicked
+                LastClicked: ReturnedTime - this.state.b3.LastClicked
             }
         });
     }
