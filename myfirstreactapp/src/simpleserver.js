@@ -1,3 +1,17 @@
+const fs = require('fs');
+
+dataDir = './data-received/';
+dataFileName = 'data-DATE';
+
+function writeData(dir,fname, data){
+
+	fs.writeFile(dir+fname, data, (err) => {
+    	// In case of a error throw err. 
+    	if (err) throw err; 
+	}) 
+}
+
+
 var http = require('http');
 http.createServer((req, res) => {
 	console.log(req.method);
@@ -7,7 +21,9 @@ http.createServer((req, res) => {
 			body += chunk.toString();
 		});
 		req.on('end', () => {
-			console.log(body);
+			console.log("Data: \n"+body);
+			console.log("Saving data to file:" + dataDir + dataFileName);
+			writeData(dataDir, dataFileName, body);
 			res.end('ok');
 		});
 	}else{	
@@ -15,12 +31,7 @@ http.createServer((req, res) => {
         <!doctype html>
         <html>
         <body>
-            <form action="/" method="post">
-                <input type="text" name="fname" /><br />
-                <input type="number" name="age" /><br />
-                <input type="file" name="photo" /><br />
-                <button>Save</button>
-            </form>
+			<h1>Whatcha doin here, friend?</h1>
         </body>
         </html>
     `);
