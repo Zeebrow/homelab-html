@@ -16,7 +16,7 @@ class MyButton extends React.Component {
 	render() {
 		return(
 			<div>
-				<div>Clicked: {this.state.value}</div>
+				<div>{this.props.name} clicked: {this.state.value}</div>
 				<button onClick={this.clickCounter}>Click Me!</button>
 			</div>
 		);

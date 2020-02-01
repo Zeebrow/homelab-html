@@ -31,7 +31,6 @@ class SendFeedback extends React.Component {
 	render() {
 		return(
 			<div>
-				<div>Server: {this.state.value}</div>
 				<button onClick={() => this.sendFeedback()}>Send Data</button>
 			</div>
 		);
