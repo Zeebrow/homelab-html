@@ -15,12 +15,12 @@ class App extends React.Component {
         console.log(b1.ClickedCount);
     }
     b1GetReturnedCount = (b1ReturnedCount) => {
-        this.setState({b1.ClickedCount: b1ReturnedCount});
-        this.setState({b1.LastClicked: 'today, lol!!1'});
+        this.setState({b1: b1ReturnedCount});
+        //this.setState({b1.LastClicked: 'today, lol!!1'});
     }
     b2GetReturnedCount = (b2ReturnedCount) => {
-        this.setState({b2.ClickedCount: b2ReturnedCount});
-        this.setState({b2.LastClicked: 'today, lol!!1'});
+        this.setState({b2: b2ReturnedCount});
+        //this.setState({b2.LastClicked: 'today, lol!!1'});
     }
 
 
