@@ -28,13 +28,13 @@ class App extends React.Component {
     }
     b2GetReturnedCount = (b2ReturnedCount, b2LastClicked) => {
         this.setState({b2ClickedCount: b2ReturnedCount});
-        this.setState({b2LastClicked: b2LastClicked - this.state.b2LastClicked});
+        this.setState({b2LastClicked: this.state.b2LastClicked - b2LastClicked});
     }
     getReturnedCount = (ReturnedCount, ReturnedTime) => {
         this.setState({
             b3:{
                 ClickedCount: ReturnedCount,
-                LastClicked: ReturnedTime - this.state.b3.LastClicked
+                LastClicked: this.state.b3.LastClicked
             }
         });
     }
