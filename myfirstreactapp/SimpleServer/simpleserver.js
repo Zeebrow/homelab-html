@@ -1,8 +1,17 @@
-const http = require('http');
-const server = http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.write('Hello World!');
-    res.end(`
+var http = require('http');
+http.createServer((req, res) => {
+	console.log(req.method);
+    if (req.method === 'POST') {
+		let body = '';
+		req.on('data', chunk => {
+			body += chunk.toString();
+		});
+		req.on('end', () => {
+			console.log(body);
+			res.end('ok');
+		});
+	}else{	
+	res.end(`
         <!doctype html>
         <html>
         <body>
@@ -15,6 +24,7 @@ const server = http.createServer((req, res) => {
         </body>
         </html>
     `);
-});
+	}	
 
-server.listen(3001);
+}).listen(3001);
+
