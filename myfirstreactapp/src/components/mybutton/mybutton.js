@@ -5,7 +5,8 @@ class MyButton extends React.Component {
         super(props);
 		this.state = {
             clickedCount: 1,
-            lastClicked: ''
+            lastClicked: '',
+            name: ''
         };
         this.clickCounter = this.clickCounter.bind(this);
     }
@@ -14,9 +15,10 @@ class MyButton extends React.Component {
         const t = Date.now();
         this.setState({ clickedCount: this.state.clickedCount+1 });
         this.setState({ lastClicked: t });
+        this.setState({ name: this.props.name });
         this.props.getReturnedCount(this.state.clickedCount, this.state.lastClicked);
-		console.log(this.props.name + " clicked count: "+this.state.clickedCount);
-        console.log(this.props.name + " last licked count: "+this.state.lastClicked);
+		console.log(this.props.name + " sending clicked count: " + this.state.clickedCount);
+        console.log(this.props.name + " sending last licked count: " + this.state.lastClicked);
 	}
 
 	render() {

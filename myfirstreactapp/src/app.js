@@ -9,6 +9,7 @@ console.log(pageOpened);
 class App extends React.Component {
     constructor() {
         super();
+        const buttonList = ['b1', 'b2', 'b3'];
         this.state = {
             b3: {
                 ClickedCount: 0,
@@ -22,28 +23,28 @@ class App extends React.Component {
         };
         console.log(this.state);
     }
-    b1GetReturnedCount = (b1ReturnedCount, b1LastClicked) => {
+    b1GetReturnedCount = (b1ReturnedCount, b1LastClicked, b1name) => {
         console.log("Time then: " + pageOpened);
         console.log("Time now: " + Date.now());
         var b1clickedAt = Date.now() - pageOpened;
         this.setState({b1ClickedCount: b1ReturnedCount});
         this.setState({b1LastClicked: b1clickedAt});
     }
-    b2GetReturnedCount = (b2ReturnedCount, b2LastClicked) => {
+    b2GetReturnedCount = (b2ReturnedCount, b2LastClicked, b2name) => {
         console.log("Time then: " + pageOpened);
         console.log("Time now: " + Date.now());
         var b2clickedAt = Date.now() - pageOpened;
         this.setState({b2ClickedCount: b2ReturnedCount});
         this.setState({b2LastClicked: b2clickedAt});
     }
-    getReturnedCount = (ReturnedCount, ReturnedTime) => {
+    getReturnedCount = (ReturnedCount, ReturnedTime, name) => {
         console.log("Time then: " + pageOpened);
         console.log("Time now: " + Date.now());
-        var b3clickedAt = Date.now() - pageOpened;
+        var clickedAt = Date.now() - pageOpened;
         this.setState({
             b3:{
                 ClickedCount: ReturnedCount,
-                LastClicked: b3clickedAt
+                LastClicked: clickedAt
             }
         });
     }
