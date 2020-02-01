@@ -14,7 +14,6 @@ class App extends React.Component {
             b2LastClicked: '',
             server: '192.168.1.76'
         };
-        console.log(this.state.b1ClickedCount);
     }
     b1GetReturnedCount = (b1ReturnedCount) => {
         this.setState({b1ClickedCount: b1ReturnedCount});
@@ -23,6 +22,10 @@ class App extends React.Component {
     b2GetReturnedCount = (b2ReturnedCount) => {
         this.setState({b2ClickedCount: b2ReturnedCount});
         this.setState({b2LastClicked: 'today, lol!!1'});
+    }
+
+    packData = () => {
+        console.log("App.js packing data: "+this.state);
     }
 
     render() {
@@ -34,7 +37,7 @@ class App extends React.Component {
                 <MyButton getReturnedCount={this.b1GetReturnedCount} name="b1"/>
                 <MyButton getReturnedCount={this.b2GetReturnedCount} name="b2"/>
                 <br/>
-                <SendFeedback />
+                <SendFeedback data={this.packData} name="sender"/>
             </div>
         );
 
