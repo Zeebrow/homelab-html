@@ -4,7 +4,7 @@ class MyButton extends React.Component {
     constructor(props){
         super(props);
 		this.state = {
-            clickedCount: 0,
+            clickedCount: 1,
             lastClicked: ''
         };
         this.clickCounter = this.clickCounter.bind(this);
