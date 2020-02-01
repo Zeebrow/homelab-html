@@ -4,7 +4,8 @@ class SendFeedback extends React.Component {
     constructor(props){
         super(props);
 		this.state = {
-            server: '192.168.1.76'
+            server: '192.168.1.76',
+            tdata: 'tester-data'
         };
         this.sendFeedback = this.sendFeedback.bind(this);
     }
@@ -15,14 +16,16 @@ class SendFeedback extends React.Component {
     // }
 
 	sendFeedback = () => {
-        console.log("Inside sendFeedback(). Data: " + this.props.data;
-        this.setState({data: this.props.data});
+        //console.log("Inside sendFeedback(). Data: " + this.props.data;
+        this.setState({tdata: this.props.data});
 
 		this.setState({ server: '192.168.1.76' });
         alert('Sending data to ' + this.state.server);
 
-        console.log("Data: "+this.props.data);
+        console.log("Props Data: "+this.props.data);
+        console.log("State Data: "+this.state.tdata);
         console.log("Server: "+this.state.server);
+        
         var xhr = new XMLHttpRequest();
         xhr.open("POST", this.props.data, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
