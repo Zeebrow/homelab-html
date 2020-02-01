@@ -15,6 +15,8 @@ class SendFeedback extends React.Component {
 		this.setState({ server: '192.168.1.76' });
         alert('Sending data to ' + this.state.server);
 
+        console.log("Data: "+this.state.data);
+        console.log("Server: "+this.state.server);
         var xhr = new XMLHttpRequest();
         xhr.open("POST", this.state.server, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
