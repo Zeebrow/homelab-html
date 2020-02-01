@@ -8,21 +8,22 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            b1:{ClickedCount: 0, LastClicked: ''},
-            b2:{ClickedCount: 0, LastClicked: ''},
+            b1ClickedCount: 0,
+            b1LastClicked: '',
+            b2ClickedCount: 0,
+            b2LastClicked: '',
             server: '192.168.1.76'
         };
         console.log(b1.ClickedCount);
     }
     b1GetReturnedCount = (b1ReturnedCount) => {
-        this.setState({b1: b1ReturnedCount});
-        //this.setState({b1.LastClicked: 'today, lol!!1'});
+        this.setState({b1ClickedCount: b1ReturnedCount});
+        this.setState({b1LastClicked: 'today, lol!!1'});
     }
     b2GetReturnedCount = (b2ReturnedCount) => {
-        this.setState({b2: b2ReturnedCount});
-        //this.setState({b2.LastClicked: 'today, lol!!1'});
+        this.setState({b2ClickedCount: b2ReturnedCount});
+        this.setState({b2LastClicked: 'today, lol!!1'});
     }
-
 
     render() {
         return(
