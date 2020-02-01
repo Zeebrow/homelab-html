@@ -29,7 +29,7 @@ class App extends React.Component {
         this.setState({b2ClickedCount: b2ReturnedCount});
         this.setState({b2LastClicked: 'today, lol!!1'});
     }
-    getReturnedCount = (ReturnedCount) => {
+    getReturnedCount = (ReturnedCount, ReturnedTime) => {
         this.setState({
             b3:{
                 ClickedCount: ReturnedCount,
