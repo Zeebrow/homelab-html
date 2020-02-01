@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const os = require('os');
-
-class MyButton extends Component {
+class MyButton extends React.Component {
     constructor(props){
         super(props);
-		this.state = {count: 0};
+		this.state = {value: 0};
 
         this.clickCounter = this.clickCounter.bind(this);
     }
