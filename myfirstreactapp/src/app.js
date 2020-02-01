@@ -45,15 +45,15 @@ class App extends React.Component {
                 <h1>Yo.</h1>
                 <br/>
                 <div>B1 Count: {this.state.b1ClickedCount}</div>
-                <div>B1 Time: pageOpened - {this.state.b1LastClicked}</div>
+                <div>B1 Time: {pageOpened - this.state.b1LastClicked}</div>
                 <MyButton getReturnedCount={this.b1GetReturnedCount} name="b1"/>
                 <br/>
                 <div>B2 Count: {this.state.b2ClickedCount}</div>
-                <div>B2 Time: pageOpened - {this.state.b2LastClicked}</div>
+                <div>B2 Time: {pageOpened - this.state.b2LastClicked}</div>
                 <MyButton getReturnedCount={this.b2GetReturnedCount} name="b2"/>
                 <br/>
                 <div>B3 Count: {this.state.b3.ClickedCount}</div>
-                <div>B3 Time: pageOpened - {this.state.b3.LastClicked}</div>
+                <div>B3 Time: {pageOpened - this.state.b3.LastClicked}</div>
                 <MyButton getReturnedCount={this.getReturnedCount} name="b3"/>
                 <br/>
                 <SendFeedback data={this.state} name="sender"/>
