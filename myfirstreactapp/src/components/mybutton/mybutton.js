@@ -11,7 +11,7 @@ class MyButton extends React.Component {
     }
 
 	clickCounter(){
-        t = Date.now();
+        const t = Date.now();
         this.setState({ clickedCount: this.state.clickedCount+1 });
         this.setState({ lastClicked: t });
         this.props.getReturnedCount(this.state.clickedCount, this.state.lastClicked);

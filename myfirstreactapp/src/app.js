@@ -46,9 +46,11 @@ class App extends React.Component {
                 <div>B1 Count: {this.state.b1ClickedCount}</div>
                 <div>B1 Time: {this.state.b1LastClicked}</div>
                 <MyButton getReturnedCount={this.b1GetReturnedCount} name="b1"/>
+                <br/>
                 <div>B2 Count: {this.state.b2ClickedCount}</div>
                 <div>B2 Time: {this.state.b2LastClicked}</div>
                 <MyButton getReturnedCount={this.b2GetReturnedCount} name="b2"/>
+                <br/>
                 <div>B3 Count: {this.state.b3.ClickedCount}</div>
                 <div>B3 Time: {this.state.b3.LastClicked}</div>
                 <MyButton getReturnedCount={this.getReturnedCount} name="b3"/>
