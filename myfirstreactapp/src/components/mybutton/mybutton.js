@@ -12,14 +12,14 @@ class MyButton extends React.Component {
 		this.setState({value: this.state.value+1});
 		console.log(this.state.value);
 	}
-
+	render() {
 		return(
 			<div>
 				<div>Clicked: {this.state.value}</div>
 				<button onClick={this.clickCounter}>Click Me!</button>
 			</div>
 		);
-
+    }
 
 }
 
