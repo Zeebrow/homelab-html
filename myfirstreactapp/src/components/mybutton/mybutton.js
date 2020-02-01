@@ -3,15 +3,16 @@ import React from 'react';
 class MyButton extends React.Component {
     constructor(props){
         super(props);
-		this.state = {value: 0};
-
+		this.state = {clickedCount: 0};
         this.clickCounter = this.clickCounter.bind(this);
     }
 
 	clickCounter(){
-		this.setState({value: this.state.value+1});
-		console.log(this.state.value);
+        this.setState({clickedCount: this.state.clickedCount+1});
+        this.props.getReturnedCount(this.state.clickedCount);
+		console.log(this.props.name + " clicked count: "+this.state.clickedCount);
 	}
+
 	render() {
 		return(
 			<div>
