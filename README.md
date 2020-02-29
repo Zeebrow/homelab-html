@@ -1,5 +1,11 @@
 # homelab-html
-This is a project to host a React webpage. The webpage's purpose will be to collect data from page visitors, such as:
+This is a project to host a React webpage. 
+
+## Motivation
+Hell if I know. To keep me out of the sunlight? 
+
+## Plan
+The webpage's purpose will be to collect data from page visitors, such as:
 
 <ul>
 <li>Time spent on a page</li>
