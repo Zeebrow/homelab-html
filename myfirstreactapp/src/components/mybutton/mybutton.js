@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './buttonstyle.css';
 class MyButton extends React.Component {
     constructor(props){
         super(props);
@@ -25,7 +25,7 @@ class MyButton extends React.Component {
 		return(
 			<div>
 				<div>{this.props.name} clicked: {this.state.value}</div>
-				<button onClick={this.clickCounter}>Click Me!</button>
+				<button className={styles.bigblue} onClick={this.clickCounter}>Click Me!</button>
 			</div>
 		);
     }

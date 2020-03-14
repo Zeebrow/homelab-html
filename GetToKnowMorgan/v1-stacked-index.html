@@ -1,0 +1,68 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css">
+<meta charset="utf-8"/>
+<style>
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
+</head>
+<h1>Dating Application</h1>
+<body>
+	<form id="deploymentform" action="/Submitted.php" method="post">
+        <fieldset>
+        <legend> Basic Info </legend>
+        First Name:<br>
+        <input type="text" name="firstname" id="firstname">
+        <br>
+        Last Name (optional):<br>
+        <input type="text" name="lastname" id="lastname">
+        <br>
+        Phone number:<br>
+        <input type="text" name="email" id="email" value="" size="30">
+        <br>
+        Real phone number:<br>
+        <input type="text" name="email" id="email" value="" size="30">
+		<br>
+        </fieldset>
+
+		<fieldset>
+		<legend>Extra Info</legend>
+		Marital Status:<br>
+		<select id="marital_status" name="marital_status">
+			<option>Single</option>
+			<option>Dating</option>
+			<option>Maried</option>
+			<option>Skank</option>
+		</select>
+		<br>
+		Number of kids you have:<br>
+		<input>
+		<br>
+		Number of kids you're willing to get rid of (I know a guy):<br>
+		<input>
+		<br>
+<!--
+		Preferred Penis Size:<br>
+		<select id="preferred_penis_size" name="preferred_penis_size">
+			<option> no preference (will affect honesty score) </option>
+			<option> less than 4 inches </option>
+			<option> at least 8 inches </option>
+		</select>
+		<br>
+-->
+		Last time you literally couldn't even:<br>
+		<input type="date">
+		<br>
+
+
+
+		</fieldset>
+	</form>
+</body>

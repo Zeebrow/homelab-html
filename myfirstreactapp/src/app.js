@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import MyList from './components/mylist.js';
 import MyButton from './components/mybutton/mybutton.js';
 import SendFeedback from './components/sendfeedback/sendfeedback.js';
-
+import './styles/App.css'
 const pageOpened = Date.now();
 console.log(pageOpened);
 class App extends React.Component {
@@ -52,7 +52,7 @@ class App extends React.Component {
     render() {
         return(
             <div>
-                <h1>Yo.</h1>
+                <h1>Justin smells like shoes.</h1>
                 <br/>
                 <div>B1 Count: {this.state.b1ClickedCount}</div>
                 <div>B1 Time: {this.state.b1LastClicked}</div>

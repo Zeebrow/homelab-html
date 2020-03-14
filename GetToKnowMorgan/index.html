@@ -1,0 +1,68 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css">
+<meta charset="utf-8"/>
+<style>
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
+</head>
+<h1>Dating Application</h1>
+<body>
+	<form id="deploymentform" action="/Submitted.php" method="post">
+        <fieldset>
+        <legend> Basic Info </legend>
+        First Name:  
+        <input type="text" name="firstName" id="firstName">
+        <br>
+        Last Name (optional): 
+        <input type="text" name="lastName" id="lastName">
+        <br>
+        Phone number: 
+        <input type="text" name="phoneNumber" id="phoneNumber" value="" size="15">
+        <br>
+        Real phone number: 
+        <input type="text" name="realPhoneNumber" id="realPhoneNumber" value="" size="15">
+		<br>
+        </fieldset>
+
+		<fieldset>
+		<legend>About You</legend>
+		Marital Status: 
+		<select id="maritalStatus" name="maritalDtatus">
+			<option>Single</option>
+			<option>Dating</option>
+			<option>Maried</option>
+			<option>Skank</option>
+		</select>
+		<br>
+		Number of kids you have: 
+		<input>
+		<br>
+		Number of kids you're willing to get rid of (I know a guy): 
+		<input>
+		<br>
+<!--
+		Preferred Penis Size: 
+		<select id="preferred_penis_size" name="preferred_penis_size">
+			<option> no preference (will affect honesty score) </option>
+			<option> less than 4 inches </option>
+			<option> at least 8 inches </option>
+		</select>
+		<br>
+-->
+		Last time you literally couldn't even: 
+		<input type="date" name="literallyCouldntEven" id="literallyCouldntEven">
+		<br>
+
+
+
+		</fieldset>
+	</form>
+</body>
